@@ -1,5 +1,110 @@
-
 /* Common styles */
 @import url('./reset.css');
 @import url('./container.css');
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 16px;
+}
+.header {
+  font-size: 24px;
+  color: #22181c;
+  justify-self: center;
+}
+.main-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 40px;
+  font-size: 24px;
+}
+.menu-nav {
+  padding: 8px;
+  background-color: #f8b259;
+  color: white;
+  width: fit-content;
+  border-radius: 24px;
+}
+.menu-nav:hover,
+.menu-nav:focus {
+  background-color: #c75d2c;
+  color: #f6e8ea;
+}
+.start-btn {
+    font-size: 16px;
+    border-radius: 10px;
+}
+#datetime-picker {
+    font-size: 16px;
+    border: 1px solid sandybrown;
+    padding: 5px;
+    margin-bottom: 340px;
+}
 
+.timer {
+  padding: 24px;
+  background-color: #F8B259;
+  color: #f3e9dc;
+  display: flex;
+  column-gap: 16px;
+  width: fit-content;
+  border-radius: 16px;
+  font-size: 40px;
+}
+.field {
+    display:flex;
+    flex-direction: column;
+}
+.label {
+    color:#c75d2c;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+input[type="number"] {
+  padding: 6px;
+  border: 1px solid grey;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+fieldset.state {
+  border: 1px solid #F8B259;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+legend {
+  font-weight: bold;
+  color: #D96F32;
+}
+
+.state label {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.create-btn {
+  padding: 10px 16px;
+  background-color: #D96F32;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.create-btn:hover {
+  background-color: #C75D2C;
+}
