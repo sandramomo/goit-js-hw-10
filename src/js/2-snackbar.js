@@ -19,7 +19,7 @@ function getUserData() {
   const delay = formData.get('delay');
   const state = refs.form.elements.state.value;
   const userInfo = {
-    delay: delay,
+    delay: +delay,
     state: state,
   };
   return userInfo;
@@ -28,19 +28,21 @@ function createPromise({ delay, state }) {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (state === 'fulfilled') {
-        resolve(
-          iziToast.show({
-            message: `✅ Fulfilled promise in ${delay}ms`,
-          })
-        );
+        resolve(`${delay}`);
       } else {
-        reject(
-          iziToast.show({
-            message: `❌ Rejected promise in ${delay} ms`,
-          })
-        );
+        reject(`${delay}`);
       }
     }, delay);
   });
-  promise.then(good => good).catch(err => err);
+  promise
+    .then(good =>
+      iziToast.show({
+        message: `✅ Fulfilled promise in ${good}ms`,
+      })
+    )
+    .catch(err =>
+      iziToast.show({
+        message: `❌ Rejected promise in ${err} ms`,
+      })
+    );
 }
